@@ -19,7 +19,8 @@ function M.config()
 
         Statement = {fg=166};
         Special = {fg=172};
-        Comment= {fg=71,sp='italic'};
+        -- Comment= {fg=71,sp='italic'};
+        -- Comment= {fg=71,sp='italic'};
         Include = {fg=1};
         Type = {fg=179};
         TypeBuiltin = {fg=150};
