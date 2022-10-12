@@ -14,9 +14,13 @@ G.map({
     { 'n', 'S',                                          '&buftype == "acwrite" ? ":W<CR>" : ":w!<CR>"',                { noremap = true, silent = true, expr = true } },
     { 'n', ';',           ':',       {} },
     { 'v', ';',           ':',       {} },
+    { 'n', '<c-e>',       '<Enter>',   {} },
+    { 'i', '<c-e>',       '<Enter>',   {} },
+    { 'n', '<c-d>',       '<BackSpace>',   {} },
+    { 'i', '<c-d>',       '<BackSpace>',   {} },
     -- cmap
-    { 'c', '<c-a>',       '<home>',  { noremap = true } },
-    { 'c', '<c-e>',       '<end>',   { noremap = true } },
+    { 'c', '<c-e>',       '<Enter>',   { noremap = true } },
+    { 'c', '<c-d>',       '<BackSpace>',   { noremap = true } },
     { 'c', '<C-k>',        '<c-p>',   { noremap = true } },
     { 'c', '<C-j>',      '<c-n>',   { noremap = true } },
 
@@ -44,9 +48,12 @@ G.map({
     -- Page Pervierw
     { 'n', 'F',           '<c-f>',     { noremap = true } },
     { 'n', 'B',           '<c-b>',     { noremap = true } },
+
     -- Space + Enter
     { 'n', '<Space><Enter>',           ':nohlsearch<CR>',     { noremap = true } },
 
+    -- Registers
+    { 'n', 'sr',           ':Registers<CR>',     { noremap = true } },
 
     -- Copy / Paste
     { 'v', 'Y',           '"+y',     { noremap = true } },
@@ -113,7 +120,6 @@ G.map({
     { 'n', '<leader>fm',           ':lua require\'telescope.builtin\'.builtin{}<CR>',     { noremap = true } },
     { 'n', '<leader>/',           ':lua require\'telescope.builtin\'.current_buffer_fuzzy_find{}<CR>',     { noremap = true } },
     { 'n', '<leader>fc',           ':lua require\'telescope.builtin\'.lsp_dynamic_workspace_symbols{}<CR>',     { noremap = true } },
-    { 'n', '<leader>l',           ':lua require\'telescope.builtin\'.treesitter{}<CR>',     { noremap = true } },
 
     -- Lsp
     { 'n', 'sj',           ':Lspsaga lsp_finder<CR>',     { noremap = true } },

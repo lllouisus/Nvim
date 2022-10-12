@@ -88,8 +88,17 @@ require('packer').startup({
         -- History
         use { 'dinhhuy258/vim-local-history' }
 
+        -- Nvim-Line
         require('plugins.configs.nvim-lines').config()
         use { 'yaocccc/nvim-lines.lua', config = "require('plugins.configs.nvim-lines').setup()" }
+
+        -- Registers
+        use {
+            "tversteeg/registers.nvim",
+            config = function()
+                require("registers").setup()
+            end,
+        }
 
         -- Theme
         use({ 'rose-pine/neovim' })
