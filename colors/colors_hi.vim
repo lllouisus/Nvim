@@ -7,6 +7,7 @@ syntax reset
 " IndentBlanklineIndent
 " hi IndentBlanklineIndent1 ctermfg=7
 
+
 " Gitsigns
 hi GitSignsAdd ctermfg=10 ctermbg=NONE
 hi GitSignsChange ctermfg=208 ctermbg=NONE
@@ -49,7 +50,6 @@ hi! link Tag Special
 hi! link Typedef Type
 hi! link lCursor Cursor
 
-" hi Visual cterm=reverse
 hi Visual ctermfg=NONE ctermbg=18 cterm=reverse
 " hi Comment ctermfg=71 ctermbg=NONE cterm=italic
 hi Comment ctermfg=242 ctermbg=NONE cterm=italic

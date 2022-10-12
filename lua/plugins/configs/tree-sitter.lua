@@ -1,4 +1,4 @@
-local G = require('G')
+local G = require('core.G')
 local M = {}
 
 function M.config()
@@ -33,7 +33,7 @@ function M.config()
         Number = {fg=37};
         Boolean = {fg=37};
     })
-    G.map({ { 'n', 'H', ':TSHighlightCapturesUnderCursor<CR>', {silent = true, noremap = true}} })
+    G.map({ { 'n', '<leader>h', ':TSHighlightCapturesUnderCursor<CR>', {silent = true, noremap = true}} })
 end
 
 function M.setup()

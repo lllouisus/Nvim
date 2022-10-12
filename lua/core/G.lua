@@ -1,9 +1,12 @@
 local G = {}
 
+G.p = vim.opt
 G.g = vim.g
-G.b = vim.b
+G.w = vim.wo
 G.fn = vim.fn
+G.b = vim.bo
 G.api = vim.api
+
 
 function G.map(maps)
     for _,map in pairs(maps) do

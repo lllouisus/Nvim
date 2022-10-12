@@ -1,3 +1,3 @@
-require('settings')  
-require('packinit') 
-require('keymap')  
+require('core.base')
+require('core.mappings')
+require "plugins"
