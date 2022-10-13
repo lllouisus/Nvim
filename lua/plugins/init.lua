@@ -92,6 +92,9 @@ require('packer').startup({
         require('plugins.configs.nvim-lines').config()
         use { 'yaocccc/nvim-lines.lua', config = "require('plugins.configs.nvim-lines').setup()" }
 
+        -- Indent
+        use 'yaocccc/nvim-hlchunk'
+
         -- Registers
         use {
             "tversteeg/registers.nvim",
@@ -99,6 +102,9 @@ require('packer').startup({
                 require("registers").setup()
             end,
         }
+
+        -- markdown预览插件 导航生成插件
+        use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
         -- Theme
         use({ 'rose-pine/neovim' })
