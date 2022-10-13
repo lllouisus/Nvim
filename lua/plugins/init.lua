@@ -106,6 +106,9 @@ require('packer').startup({
         -- markdown预览插件 导航生成插件
         use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+        -- Vim-Css-Color Should (Set guicolor)
+        -- use { 'norcalli/nvim-colorizer.lua', config = "require('plugins.configs.nvim-colorizer')" }
+
         -- Theme
         use({ 'rose-pine/neovim' })
 
