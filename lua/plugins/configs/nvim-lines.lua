@@ -9,7 +9,7 @@ function GetFt()
 end
 
 function M.config()
-    G.g.powerline_symbols = { light_right = '', dark_right = '', light_left = '', dark_left = '' }
+    G.g.powerline_symbols = { light_right = '㇏', dark_right = '㇏', light_left = '／', dark_left = '／' }
     G.g.line_powerline_enable = 1
     G.g.line_nerdfont_enable = 1
     G.g.line_unnamed_filename = '~'

@@ -29,7 +29,7 @@ G.p.autoread = true
 G.b.autoread = true
 
 -- Mouse
-G.w.signcolumn = "yes"
+G.w.signcolumn = "auto"
 -- G.p.mouse = 'a'
 
 -- About Colors

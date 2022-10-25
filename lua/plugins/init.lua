@@ -61,7 +61,7 @@ require('packer').startup({
 
         -- 多光标插件
         require('plugins.configs.vim-visual-multi').config()
-        use { 'mg979/vim-visual-multi', config = "require('plugins.configs.vim-visual-multi').setup()", event = 'CursorHold' }
+        use { 'mg979/vim-visual-multi', config = "require('plugins.configs.vim-visual-multi').setup()" }
 
         -- Comment
         use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
@@ -93,7 +93,7 @@ require('packer').startup({
         use { 'yaocccc/nvim-lines.lua', config = "require('plugins.configs.nvim-lines').setup()" }
 
         -- Indent
-        use 'yaocccc/nvim-hlchunk'
+
 
         -- Registers
         use {
