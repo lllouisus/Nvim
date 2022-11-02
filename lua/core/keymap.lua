@@ -117,7 +117,7 @@ G.map({
     { 'n', '<leader>fo',           ':lua require(\'telescope.builtin\').oldfiles({layout_strategy=\'horizontal\',layout_config={width=0.6, height=0.45}})<CR>',     { noremap = true } },
     { 'n', 'sm',           ':lua require(\'telescope.builtin\').builtin({layout_strategy=\'center\',layout_config={width=0.3, height=0.3}})<CR>',     { noremap = true } },
     { 'n', '<leader>/',           ':lua require(\'telescope.builtin\').current_buffer_fuzzy_find({layout_strategy=\'center\',layout_config={width=0.45, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', '<leader>fc',           ':lua require(\'telescope.builtin\').lsp_dynamic_workspace_symbols({layout_strategy=\'horizontal\',layout_config={width=0.6, height=0.45}})<CR>',     { noremap = true } },
+    { 'n', '<leader>l',           ':lua require(\'telescope.builtin\').lsp_document_symbols({layout_strategy=\'horizontal\',layout_config={width=0.6, height=0.45}})<CR>',     { noremap = true } },
 
     -- Symbols-outline
 

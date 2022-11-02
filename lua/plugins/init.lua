@@ -123,6 +123,9 @@ require('packer').startup({
         }
 
         -- Lines
+        require('plugins.config.lines').config()
+        use { 'yaocccc/nvim-lines.lua', config = "require('plugins.config.lines').setup()" }
+
         use { 'yaocccc/nvim-hlchunk' } 
 
         -- Theme
