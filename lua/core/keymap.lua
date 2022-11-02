@@ -109,15 +109,15 @@ G.map({
     { 'v', '<c-s>',             ':s/\\v//gc<left><left><left><left>', { noremap = true } },
 
     -- FZF
-    { 'n', 'sf',           ':lua require(\'telescope.builtin\').find_files({cwd = \'~/.config\', layout_strategy=\'center\',layout_config={width=0.45, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({layout_strategy=\'center\',layout_config={width=0.45, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', '<leader>fw',           ':lua require(\'telescope.builtin\').live_grep({layout_strategy=\'horizontal\',layout_config={width=0.6, height=0.45}})<CR>',     { noremap = true } },
+    { 'n', 'sf',           ':lua require(\'telescope.builtin\').find_files({cwd = \'~/.config\',layout_strategy=\'center\',layout_config={width=0.3, height=0.3}})<CR>',     { noremap = true } },
+    { 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({layout_strategy=\'center\',layout_config={width=0.3, height=0.3}})<CR>',     { noremap = true } },
     { 'n', 'sb',           ':lua require(\'telescope.builtin\').buffers({layout_strategy=\'center\',layout_config={width=0.3, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', '<leader>fh',           ':lua require\'telescope.builtin\'.help_tags{}<CR>',     { noremap = true } },
-    { 'n', '<leader>fo',           ':lua require(\'telescope.builtin\').oldfiles({layout_strategy=\'horizontal\',layout_config={width=0.6, height=0.45}})<CR>',     { noremap = true } },
     { 'n', 'sm',           ':lua require(\'telescope.builtin\').builtin({layout_strategy=\'center\',layout_config={width=0.3, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', '<leader>/',           ':lua require(\'telescope.builtin\').current_buffer_fuzzy_find({layout_strategy=\'center\',layout_config={width=0.45, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', '<leader>l',           ':lua require(\'telescope.builtin\').lsp_document_symbols({layout_strategy=\'horizontal\',layout_config={width=0.6, height=0.45}})<CR>',     { noremap = true } },
+    { 'n', '<leader>fh',           ':Telescope help_tags<CR>',     { noremap = true } },
+    { 'n', '<leader>fw',           ':Telescope live_grep<CR>',     { noremap = true } },
+    { 'n', '<leader>fo',           ':Telescope oldfiles<CR>',     { noremap = true } },
+    { 'n', '<leader>l',           ':Telescope lsp_document_symbols<CR>',     { noremap = true } },
+    { 'n', '<leader>/',           ':Telescope current_buffer_fuzzy_find<CR>',     { noremap = true } },
 
     -- Symbols-outline
 

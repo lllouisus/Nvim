@@ -35,8 +35,8 @@ require("telescope").setup {
       vertical = {
         mirror = false,
       },
-      width = 0.80,
-      height = 0.70,
+      width = 0.50,
+      height = 0.30,
       preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,
