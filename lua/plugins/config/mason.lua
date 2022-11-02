@@ -1,5 +1,5 @@
 require("mason").setup({
-    PATH = "skip",
+    PATH = "prepend",
 
     ensure_installed = { "lua-language-server" }, -- not an option from mason.nvim
     ui = {

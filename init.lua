@@ -1,3 +1,5 @@
-require('core.base')
-require('core.mappings')
-require "plugins"
+-- TODO:
+require"core.base"
+require"core.keymap"
+require"plugins"
+

@@ -1,12 +1,14 @@
 local G = require('core.G')
 
+-- Number Line
 G.g.mapleader = " "
 G.p.number = true
 -- G.p.relativenumber = true
 
+-- UTF-8
 vim.scriptencoding = 'utf-8'
-vim.encoding = 'utf-8'
-vim.fileencoding = 'utf-8'
+G.p.encoding = 'utf-8'
+G.p.fileencoding = 'utf-8'
 
 G.p.scrolloff = 5
 G.p.sidescrolloff = 5
@@ -25,16 +27,21 @@ G.p.smarttab = true
 G.p.expandtab = true
 
 G.p.smartcase = true
-G.p.autoread = true
-G.b.autoread = true
 
--- Mouse
-G.w.signcolumn = "auto"
+-- Mouse / Display
 -- G.p.mouse = 'a'
-
--- About Colors
+G.w.signcolumn = "yes"
 G.p.cursorline = true
--- G.p.termguicolors = true
+G.p.termguicolors = false
+
+-- Line / Hide
+G.p.cmdheight = 1
+G.p.laststatus = 0
+
+-- G.cmd('colorscheme rose-pine')
+G.cmd('colorscheme colors_hi')
+
+
 
 G.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
@@ -44,8 +51,6 @@ G.api.nvim_create_autocmd('TextYankPost', {
     }
 end
 })
-
-vim.cmd('colorscheme colors_hi')
 
 -- 不自动备份 不换行
 G.cmd([[

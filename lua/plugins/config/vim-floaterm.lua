@@ -9,6 +9,7 @@ function FTToggle(name, cmd, pre_cmd)
         G.cmd(string.format('FloatermNew --autoclose=0 --name=%s %s', name, cmd))
     end
 end
+
 function SetFTToggleMap(key, name, cmd, pre_cmd)
     G.map({
         { 'n', key, string.format(":call v:lua.FTToggle('%s', '%s', '%s')<cr>", name, cmd, pre_cmd), {silent = true, noremap = true}},
@@ -24,7 +25,6 @@ function M.config()
     G.g.floaterm_autoclose = 1
     G.g.floaterm_opener = 'edit'
     G.cmd("au BufEnter * if &buftype == 'terminal' | :call timer_start(50, { -> execute('startinsert!') }, { 'repeat': 3 }) | endif")
-    G.cmd("hi FloatermBorder ctermfg=fg ctermbg=none")
     function RunFile()
         G.cmd('w')
         local ft = G.eval('&ft')
@@ -45,9 +45,9 @@ function M.config()
 
     SetFTToggleMap('st', 'TERM', '', 'call SetVimDir()')
     G.map({
-        { 'n', '<F5>', ':call v:lua.RunFile()<cr>', {silent = true, noremap = true}},
-        { 'i', '<F5>', '<esc>:call v:lua.RunFile()<cr>', {silent = true, noremap = true}},
-        { 't', '<F5>', "&ft == \"floaterm\" ? printf('<c-\\><c-n>:FloatermHide<cr>%s', floaterm#terminal#get_bufnr('RUN') == bufnr('%') ? '' : '<F5>') : '<F5>'", {silent = true, expr = true}} 
+        -- { 'n', '<F5>', ':call v:lua.RunFile()<cr>', {silent = true, noremap = true}},
+        -- { 'i', '<F5>', '<esc>:call v:lua.RunFile()<cr>', {silent = true, noremap = true}},
+        -- { 't', '<F5>', "&ft == \"floaterm\" ? printf('<c-\\><c-n>:FloatermHide<cr>%s', floaterm#terminal#get_bufnr('RUN') == bufnr('%') ? '' : '<F5>') : '<F5>'", {silent = true, expr = true}} 
     })
 end
 

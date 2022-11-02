@@ -10,6 +10,7 @@ if G.fn.empty(G.fn.glob(install_path)) > 0 then
     packer_bootstrap = true
 end
 
+        -- TODO:
 require('packer').startup({
     function(use)
         -- Packer Manager
@@ -18,24 +19,35 @@ require('packer').startup({
         -- StartupTime
         use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
+        -- vv 快速选中内容插件
+        require('plugins.config.vim-expand-region').config()
+        use { 'terryma/vim-expand-region', config = "require('plugins.config.vim-expand-region').setup()", event = 'BufEnter' }
+
+        -- UI
+        -- Lsp Progress
+        use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end, event = "InsertEnter" }
+        use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", config = function() require("todo-comments").setup { } end }
+
+        use {'edluffy/specs.nvim', config = "require('plugins.config.specs')" }
+
         -- Lsp / Cmp
-        use { 'williamboman/mason.nvim', config = "require('plugins.configs.mason')" }
-        use { 'neovim/nvim-lspconfig', config = "require('plugins.configs.lspconfig')" }
-        -- use { 'neovim/nvim-lspconfig', config = "require('plugins.configs.lsp-language-server')" }
+        use { 'williamboman/mason.nvim', config = "require('plugins.config.mason')" }
+        use { 'neovim/nvim-lspconfig', config = "require('plugins.config.lspconfig')" }
+        use { "williamboman/mason-lspconfig.nvim", config = "require('plugins.config.mason-lspconfig')" }
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-path'
         use 'hrsh7th/cmp-cmdline'
-        use { 'hrsh7th/nvim-cmp', config = "require('plugins.configs.p-cmp')" }
+        use { 'hrsh7th/nvim-cmp', config = "require('plugins.config.p-cmp')" }
         use 'L3MON4D3/LuaSnip'
         use { 'saadparwaiz1/cmp_luasnip' }
-        use { 'onsails/lspkind.nvim', config = "require('plugins.configs.p-kind')" }
-        use { 'ray-x/lsp_signature.nvim', config = "require('plugins.configs.lsp-signature')" }
+        use { 'onsails/lspkind.nvim', config = "require('plugins.config.p-kind')" }
+        use { 'ray-x/lsp_signature.nvim', config = "require('plugins.config.lsp-signature')" }
         use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp"}, event = "InsertEnter" }
         use { 'glepnir/lspsaga.nvim' }
 
         -- Treesitter
-        use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.configs.p-treesitter')", run = ':TSUpdate', event = 'BufRead' }
+        use { 'nvim-treesitter/nvim-treesitter', config = "require('plugins.config.p-treesitter')", run = ':TSUpdate', event = 'BufRead' }
 
         -- Telescope / FZF
         -- telescope ui select
@@ -44,24 +56,24 @@ require('packer').startup({
         use 'nvim-lua/plenary.nvim'
         use 'nvim-lua/popup.nvim'
         use 'ibhagwan/fzf-lua'
-        use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('plugins.configs.telescope')" }
+        use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('plugins.config.telescope')" }
         use 'nvim-telescope/telescope-file-browser.nvim'
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
 
         -- Nvim-Tree
-        require('plugins.configs.nvim-tree').config()
-        use { 'kyazdani42/nvim-tree.lua', config = "require('plugins.configs.nvim-tree').setup()", cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' }, required = { 'kyazdani42/nvim-web-devicons' } }
+        require('plugins.config.nvim-tree').config()
+        use { 'kyazdani42/nvim-tree.lua', config = "require('plugins.config.nvim-tree').setup()", cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' }, required = { 'kyazdani42/nvim-web-devicons' } }
 
         -- Hop
-        use { 'phaazon/hop.nvim', branch = 'v2', config = "require('plugins.configs.hop')" }
+        use { 'phaazon/hop.nvim', branch = 'v2', config = "require('plugins.config.hop')" }
 
         -- ff 高亮光标下的word
-        require('plugins.configs.vim-interestingwords').config()
-        use { 'lfv89/vim-interestingwords', config = "require('plugins.configs.vim-interestingwords').setup()" }
+        require('plugins.config.vim-interestingwords').config()
+        use { 'lfv89/vim-interestingwords', config = "require('plugins.config.vim-interestingwords').setup()" }
 
         -- 多光标插件
-        require('plugins.configs.vim-visual-multi').config()
-        use { 'mg979/vim-visual-multi', config = "require('plugins.configs.vim-visual-multi').setup()" }
+        require('plugins.config.vim-visual-multi').config()
+        use { 'mg979/vim-visual-multi', config = "require('plugins.config.vim-visual-multi').setup()" }
 
         -- Comment
         use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
@@ -70,29 +82,22 @@ require('packer').startup({
         use { 'tpope/vim-surround' }
 
         -- Terminal
-        require('plugins.configs.vim-floaterm').config()
-        use { 'voldikss/vim-floaterm', config = "require('plugins.configs.vim-floaterm').setup()" }
+        require('plugins.config.vim-floaterm').config()
+        use { 'voldikss/vim-floaterm', config = "require('plugins.config.vim-floaterm').setup()" }
 
         -- Autopairs
-        use { 'windwp/nvim-autopairs', config = "require('plugins.configs.autopairs')" }
+        use { 'windwp/nvim-autopairs', config = "require('plugins.config.autopairs')" }
 
         -- Translotor Tool
         use { 'voldikss/vim-translator' }
 
-        -- Lsp Progress
-        use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end }
+        -- Symbols-outline
 
         -- Gitsigns
-        use { 'lewis6991/gitsigns.nvim', config = "require('plugins.configs.gitsigns')", event = "CursorHold" }
-        
+        use { 'lewis6991/gitsigns.nvim', config = "require('plugins.config.gitsigns')", event = "CursorHold" }
+
         -- History
         use { 'dinhhuy258/vim-local-history' }
-
-        -- Nvim-Line
-        require('plugins.configs.nvim-lines').config()
-        use { 'yaocccc/nvim-lines.lua', config = "require('plugins.configs.nvim-lines').setup()" }
-
-        -- Indent
 
 
         -- Registers
@@ -107,14 +112,23 @@ require('packer').startup({
         use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
         -- Vim-Css-Color Should (Set guicolor)
-        -- use { 'norcalli/nvim-colorizer.lua', config = "require('plugins.configs.nvim-colorizer')" }
+        -- use { 'norcalli/nvim-colorizer.lua', config = "require('plugins.config.nvim-colorizer')", event = "BufRead" }
+
+        -- Fold Code
+        use { 'anuvyklack/fold-preview.nvim',
+            requires = 'anuvyklack/keymap-amend.nvim',
+            config = function()
+                require('fold-preview').setup()
+            end
+        }
+
+        -- Lines
+        use { 'yaocccc/nvim-hlchunk' } 
 
         -- Theme
-        use({ 'rose-pine/neovim' })
-
-
-
-
+        -- use { 'sainnhe/everforest' }
+        -- use { 'rose-pine/neovim' }
+        -- use { 'olimorris/onedarkpro.nvim' }
         ----------------------------------------------------------------------------------------------------
 
     end,
