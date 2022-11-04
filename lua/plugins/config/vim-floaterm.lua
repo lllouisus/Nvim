@@ -43,7 +43,7 @@ function M.config()
         endf
     ]])
 
-    SetFTToggleMap('st', 'TERM', '', 'call SetVimDir()')
+    SetFTToggleMap('<leader>o', 'TERM', '', 'call SetVimDir()')
     G.map({
         -- { 'n', '<F5>', ':call v:lua.RunFile()<cr>', {silent = true, noremap = true}},
         -- { 'i', '<F5>', '<esc>:call v:lua.RunFile()<cr>', {silent = true, noremap = true}},
