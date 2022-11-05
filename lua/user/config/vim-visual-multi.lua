@@ -1,4 +1,4 @@
-local G = require('core.G')
+local G = require('first_love.G')
 local M = {}
 
 function M.config()
@@ -23,7 +23,6 @@ function M.config()
 
         ['Skip Region'] = 'q',
         ['Remove Region'] = 'q',
-
     }
 end
 

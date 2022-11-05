@@ -1,9 +1,9 @@
-G = require('core.G')
-
-G.cmd([[au BufEnter * if &buftype == '' && &readonly == 1 | set buftype=acwrite | set noreadonly | endif]])
-G.cmd('command! W w !doas tee > /dev/null %')
+G = require('first_love.G')
+vim.cmd([[au BufEnter * if &buftype == '' && &readonly == 1 | set buftype=acwrite | set noreadonly | endif]])
+vim.cmd('command! W w !doas tee > /dev/null %')
 
 G.map({
+
     -- Nopmap
     { 'n', 's',                                         '<NOP>',                                                        {} },
 
@@ -129,12 +129,13 @@ G.map({
     { 'n', 'sk',           ':Lspsaga hover_doc<CR>',     { noremap = true } },
 
     --- --- --- --- --- E N D --- --- --- ---
+
+
 })
 
-
 -- 重设tab长度
-G.cmd('command! -nargs=* SetTab call SwitchTab(<q-args>)')
-G.cmd([[
+vim.cmd('command! -nargs=* SetTab call SwitchTab(<q-args>)')
+vim.cmd([[
     fun! SwitchTab(tab_len)
         if !empty(a:tab_len)
             let [&shiftwidth, &softtabstop, &tabstop] = [a:tab_len, a:tab_len, a:tab_len]
@@ -162,3 +163,4 @@ G.cmd([[
         call cursor(l, c1)
     endf
 ]])
+

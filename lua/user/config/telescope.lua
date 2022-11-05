@@ -1,4 +1,3 @@
-
 local status, actions = pcall(require, "telescope.actions")
 if (not status) then
   return

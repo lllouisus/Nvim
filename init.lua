@@ -1,5 +1,3 @@
--- TODO:
-require"core.base"
-require"core.keymap"
-require"plugins"
-
+require"first_love.base"
+require"first_love.map"
+require"user"

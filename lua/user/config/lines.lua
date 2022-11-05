@@ -1,4 +1,4 @@
-local G = require('core.G')
+local G = require('first_love.G')
 local M = {}
 
 function GitInfo()
