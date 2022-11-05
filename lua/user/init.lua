@@ -21,15 +21,15 @@ require('packer').startup({
 
         -- vv 快速选中内容插件
         require('user.config.vim-expand-region').config()
-        use { 'terryma/vim-expand-region', config = "require('user.config.vim-expand-region').setup()", event = 'CursorHold' }
+        use { 'terryma/vim-expand-region', config = "require('user.config.vim-expand-region').setup()", event = 'BufRead' }
 
         -- ff 高亮光标下的word
         require('user.config.vim-interestingwords').config()
-        use { 'lfv89/vim-interestingwords', config = "require('user.config.vim-interestingwords').setup()", event = 'CursorHold' }
+        use { 'lfv89/vim-interestingwords', config = "require('user.config.vim-interestingwords').setup()", event = 'BufRead' }
 
         -- 多光标插件
         require('user.config.vim-visual-multi').config()
-        use { 'mg979/vim-visual-multi', config = "require('user.config.vim-visual-multi').setup()", event = 'CursorHold' }
+        use { 'mg979/vim-visual-multi', config = "require('user.config.vim-visual-multi').setup()", event = 'BufRead' }
 
         -- Surround
         use { 'tpope/vim-surround', event = 'BufEnter' }

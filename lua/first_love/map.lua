@@ -18,11 +18,14 @@ G.map({
     { 'i', '<c-e>',       '<Enter>',   {} },
     { 'n', '<c-d>',       '<BackSpace>',   {} },
     { 'i', '<c-d>',       '<BackSpace>',   {} },
+
     -- cmap
     { 'c', '<c-e>',       '<Enter>',   { noremap = true } },
     { 'c', '<c-d>',       '<BackSpace>',   { noremap = true } },
     { 'c', '<C-k>',        '<c-p>',   { noremap = true } },
     { 'c', '<C-j>',      '<c-n>',   { noremap = true } },
+    { 'c', '<C-h>',      '<left>',   { noremap = true } },
+    { 'c', '<C-l>',      '<right>',   { noremap = true } },
 
     -- CTRL SHIFT + Move
     { 'i', '<c-k>',    '<up>', { noremap = true, silent = true } },
@@ -45,9 +48,6 @@ G.map({
     { 'i', '<A-down>',    '<Esc>:m .+1<cr>i', { noremap = true, silent = true } },
     { 'v', '<A-up>',      ":m '<-2<cr>gv",    { noremap = true, silent = true } },
     { 'v', '<A-down>',    ":m '>+1<cr>gv",    { noremap = true, silent = true } },
-    -- Page Pervierw
-    { 'n', 'F',           '<c-f>',     { noremap = true } },
-    { 'n', 'B',           '<c-b>',     { noremap = true } },
 
     -- Space + Enter
     { 'n', '<Space><Enter>',           ':nohlsearch<CR>',     { noremap = true } },

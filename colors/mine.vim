@@ -51,8 +51,8 @@ hi! link Typedef Type
 hi! link lCursor Cursor
 
 hi Visual ctermfg=NONE ctermbg=18 cterm=reverse
-" hi Comment ctermfg=71 ctermbg=NONE cterm=italic
-hi Comment ctermfg=242 ctermbg=NONE cterm=italic
+hi Comment ctermfg=71 ctermbg=NONE cterm=italic
+" hi Comment ctermfg=242 ctermbg=NONE cterm=italic
 
 hi Cursor ctermfg=230 ctermbg=32 cterm=NONE
 hi CursorLineNr ctermfg=80 ctermbg=NONE cterm=bold
