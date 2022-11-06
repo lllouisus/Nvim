@@ -13,16 +13,6 @@ function G.map(maps)
     end
 end
 
-function G.hi(hls)
-    for group,color in pairs(hls) do
-        local fg = color.fg and ' ctermfg=' .. color.fg or ' ctermfg=NONE'
-        local bg = color.bg and ' ctermbg=' .. color.bg or ' ctermbg=NONE'
-        local sp = color.sp and ' cterm=' .. color.sp or ''
-        G.api.nvim_command('highlight ' .. group .. fg .. bg .. sp)
-        G.api.nvim_command('highlight ' .. 'TS' .. group .. fg .. bg .. sp)
-    end
-end
-
 function G.cmd(cmd)
     G.api.nvim_command(cmd)
 end
@@ -36,3 +26,4 @@ function G.eval(c)
 end
 
 return G
+

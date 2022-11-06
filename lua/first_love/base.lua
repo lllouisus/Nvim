@@ -40,9 +40,9 @@ G.cmd([[
 
 -- Mouse / Display
 G.p.mouse = "a"
-G.w.signcolumn = "auto"
+G.w.signcolumn = "yes"
 G.p.cursorline = true
--- G.p.termguicolors = true
+G.p.termguicolors = true
 G.cmd([[colorscheme mine]])
 
 -- Line / Hide
@@ -88,4 +88,6 @@ G.cmd([[
     " autocmd BufWinEnter * syn match ErrSpace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
     autocmd BufWinEnter * syn match Todo /TODO\(:.*\)*/
 ]])
+
+
 

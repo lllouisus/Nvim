@@ -19,17 +19,22 @@ require('packer').startup({
         -- StartupTime
         use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
+        -- Comment
+        use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
+
+        use { 'yaocccc/nvim-hlchunk' }
+
         -- vv 快速选中内容插件
         require('user.config.vim-expand-region').config()
-        use { 'terryma/vim-expand-region', config = "require('user.config.vim-expand-region').setup()", event = 'BufRead' }
+        use { 'terryma/vim-expand-region', config = "require('user.config.vim-expand-region').setup()", event = 'CursorHold' }
 
         -- ff 高亮光标下的word
         require('user.config.vim-interestingwords').config()
-        use { 'lfv89/vim-interestingwords', config = "require('user.config.vim-interestingwords').setup()", event = 'BufRead' }
+        use { 'lfv89/vim-interestingwords', config = "require('user.config.vim-interestingwords').setup()", event = 'CursorHold' }
 
         -- 多光标插件
         require('user.config.vim-visual-multi').config()
-        use { 'mg979/vim-visual-multi', config = "require('user.config.vim-visual-multi').setup()", event = 'BufRead' }
+        use { 'mg979/vim-visual-multi', config = "require('user.config.vim-visual-multi').setup()", event = 'CursorHold' }
 
         -- Surround
         use { 'tpope/vim-surround', event = 'BufEnter' }
@@ -38,6 +43,9 @@ require('packer').startup({
         require('user.config.vim-floaterm').config()
         use { 'voldikss/vim-floaterm', config = "require('user.config.vim-floaterm').setup()" }
 
+        -- Nvim-Tree
+        require('user.config.nvim-tree').config()
+        use { 'kyazdani42/nvim-tree.lua', config = "require('user.config.nvim-tree').setup()", cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' } }
 
         -- Lsp / Cmp
         use { 'williamboman/mason.nvim', config = "require('user.config.mason')" }
@@ -74,17 +82,10 @@ require('packer').startup({
         -- Lsp Progress
         use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end, event = "InsertEnter" }
         use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", config = function() require("todo-comments").setup { } end }
+        use { 'norcalli/nvim-colorizer.lua', config = "require('user.config.colorizer')", event = "BufRead" }
 
         -- markdown
         use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
-        -- Nvim-Tree
-        require('user.config.nvim-tree').config()
-        use { 'kyazdani42/nvim-tree.lua', config = "require('user.config.nvim-tree').setup()", cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' } }
-
-        -- Lines
-        require('user.config.lines').config()
-        use { 'yaocccc/nvim-lines.lua', config = "require('user.config.lines').setup()" }
 
         -- Fold Code
         use { 'anuvyklack/fold-preview.nvim',
@@ -114,10 +115,13 @@ require('packer').startup({
         -- Hop
         use { 'phaazon/hop.nvim', branch = 'v2', config = "require('user.config.hop')", event = 'BufEnter' }
 
-        -- Comment
-        use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
-
-        use { 'yaocccc/nvim-hlchunk' }
+        -- Gitsigns
+        use {
+            'lewis6991/gitsigns.nvim',
+            config = function()
+                require('gitsigns').setup()
+            end
+        }
 
 
 
@@ -138,4 +142,5 @@ require('packer').startup({
 if packer_bootstrap then
     require('packer').sync()
 end
+
 
