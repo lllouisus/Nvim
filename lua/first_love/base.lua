@@ -72,6 +72,10 @@ G.cmd([[
     set hidden
 ]])
 
+G.cmd([[ 
+    set updatetime=300
+]])
+
 G.cmd([[ set viminfo=!,'10000,<50,s10,h ]])
 
 vim.cmd [[

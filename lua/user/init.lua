@@ -20,7 +20,7 @@ require('packer').startup({
         use({ "dstein64/vim-startuptime", cmd = "StartupTime" })
 
         -- Comment
-        use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
+        use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end, event = "CursorHold" }
 
         use { 'yaocccc/nvim-hlchunk' }
 
@@ -37,11 +37,11 @@ require('packer').startup({
         use { 'mg979/vim-visual-multi', config = "require('user.config.vim-visual-multi').setup()", event = 'CursorHold' }
 
         -- Surround
-        use { 'tpope/vim-surround', event = 'BufEnter' }
+        use { 'tpope/vim-surround', event = "CursorHold" }
 
         -- Terminal
         require('user.config.vim-floaterm').config()
-        use { 'voldikss/vim-floaterm', config = "require('user.config.vim-floaterm').setup()" }
+        use { 'voldikss/vim-floaterm', config = "require('user.config.vim-floaterm').setup()", event = "CursorHold" }
 
         -- Nvim-Tree
         require('user.config.nvim-tree').config()
@@ -75,14 +75,14 @@ require('packer').startup({
         use 'nvim-lua/plenary.nvim'
         use 'nvim-lua/popup.nvim'
         use 'ibhagwan/fzf-lua'
-        use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('user.config.telescope')" }
+        use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('user.config.telescope')", event = "CursorHold", after = { 'plenary.nvim' } }
         use 'nvim-telescope/telescope-file-browser.nvim'
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
 
         -- Lsp Progress
         use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end, event = "InsertEnter" }
-        use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", config = function() require("todo-comments").setup { } end }
-        use { 'norcalli/nvim-colorizer.lua', config = "require('user.config.colorizer')", event = "BufRead" }
+        use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", config = function() require("todo-comments").setup { } end, event = "InsertEnter" }
+        use { 'norcalli/nvim-colorizer.lua', config = "require('user.config.colorizer')", event = "CursorHold" }
 
         -- markdown
         use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
@@ -101,26 +101,28 @@ require('packer').startup({
             config = function()
                 require("registers").setup()
             end,
+            cmd = "Registers"
         }
 
         -- History
         use { 'dinhhuy258/vim-local-history' }
 
         -- Translotor Tool
-        use { 'voldikss/vim-translator' }
+        use { 'voldikss/vim-translator', event = "CursorHold" }
 
         -- Autopairs
-        use { 'windwp/nvim-autopairs', config = "require('user.config.autopairs')" }
+        use { 'windwp/nvim-autopairs', config = "require('user.config.autopairs')", event = "InsertEnter" }
 
         -- Hop
-        use { 'phaazon/hop.nvim', branch = 'v2', config = "require('user.config.hop')", event = 'BufEnter' }
+        use { 'phaazon/hop.nvim', branch = 'v2', config = "require('user.config.hop')", event = 'CursorHold' }
 
         -- Gitsigns
         use {
             'lewis6991/gitsigns.nvim',
             config = function()
                 require('gitsigns').setup()
-            end
+            end,
+            event = "InsertEnter"
         }
 
 
