@@ -30,9 +30,9 @@ hi @method guifg=#d75f00
 hi @method.call guifg=#ff6666
 hi @parameter guifg=#ff6666
 "
-hi @keyword guifg=#ff6666
-hi @keyword.function guifg=#ff6666
-hi @exception guifg=#ff6666
+hi @keyword guifg=#CA6868
+hi @keyword.function guifg=#CA6868
+hi @exception guifg=#CA6868
 "
 hi @statement guifg=#d75f00
 hi @special guifg=#d78700
@@ -73,7 +73,7 @@ hi Comment guibg=NONE guifg=#5faf5f gui=italic
 " hi Comment guibg=NONE guifg=#6c6c6c gui=italic
 
 " Cursor Line
-hi Cursor guifg=#ffffd7  guibg=#0087d7 gui=NONE
+hi Cursor guifg=fg  guibg=fg gui=NONE
 hi CursorLineNr guifg=#5fd7d7 guibg=NONE gui=BOLD
 hi CursorLine guifg=NONE guibg=NONE gui=BOLD
 
