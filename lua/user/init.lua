@@ -72,12 +72,12 @@ require('packer').startup({
         -- Telescope / FZF
         -- telescope ui select
         -- use {'nvim-telescope/telescope-ui-select.nvim' }
+        -- use 'ibhagwan/fzf-lua'
         use 'nvim-lua/plenary.nvim'
         use 'nvim-lua/popup.nvim'
-        use 'ibhagwan/fzf-lua'
-        use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('user.config.telescope')", event = "CursorHold", after = { 'plenary.nvim' } }
-        use 'nvim-telescope/telescope-file-browser.nvim'
-        use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+        use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' }, config = "require('user.config.telescope')", event = { 'CursorHold' }, after = { 'plenary.nvim' } }
+        use { 'nvim-telescope/telescope-file-browser.nvim' }
+        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
         -- Lsp Progress
         use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end, event = "InsertEnter" }

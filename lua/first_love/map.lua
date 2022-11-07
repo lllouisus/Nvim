@@ -55,6 +55,10 @@ G.map({
     -- Registers
     { 'n', 'sr',           ':Registers<CR>',     { noremap = true } },
 
+    -- Startuptime/Lazylod
+    { 'n', '<leader>fa',           ':PackerStatus<CR>',     { noremap = true } },
+    { 'n', '<leader>fs',           ':StartupTime<CR>',     { noremap = true } },
+
     -- Copy / Paste
     { 'v', 'Y',           '"+y',     { noremap = true } },
     { 'v', 'P',           '"+p',     { noremap = true } },
