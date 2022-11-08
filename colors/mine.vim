@@ -36,6 +36,11 @@ highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
 highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
 highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
 highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindText guibg=NONE guifg=#CA6868
+highlight! CmpItemKindClass guibg=NONE guifg=#C586C0
+highlight! CmpItemKindFile guibg=NONE guifg=#303030
+highlight! CmpItemKindFolder guibg=NONE guifg=#569CD6
+highlight! CmpItemKindStruct guibg=NONE guifg=#C586C0
 
 
 " ------ ------ ------ ------ ------ ------ ------ --
