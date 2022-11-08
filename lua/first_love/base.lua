@@ -65,13 +65,6 @@ G.cmd([[
     set undodir=~/.config/nvim/cache/undodir
 ]])
 
-G.cmd([[
-    set vb
-    set t_vb=""
-    set t_ut=""
-    set hidden
-]])
-
 G.cmd([[ 
     set updatetime=300
 ]])

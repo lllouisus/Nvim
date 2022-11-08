@@ -3,6 +3,8 @@ if exists("syntax_on")
  syntax reset 
 endif
 
+set background=dark
+
 function!  Coloring(group,guibg,guifg,gui)
   let highlightstr = 'highlight ' . a:group . ' '
   let highlightstr .= 'guibg=' . a:guibg . ' '
@@ -16,6 +18,33 @@ endfunction
 
 
 " ------------------------------------------
+
+
+" Cmp colors & Lsp ------ ------ ------ ------ ------
+" Bezel color
+highlight! link CmpPmenu         Pmenu
+highlight! link CmpPmenuBorder   Pmenu
+" highlight! CmpPmenu         guibg=#242a30 
+" highlight! CmpPmenuBorder   guibg=#242a30
+
+" Single color
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6    " Search keyword
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+
+" Function & other
+highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+
+
+" ------ ------ ------ ------ ------ ------ ------ --
+
+
+
+
+
+
 " Tree-Sitter
 hi @variable guifg=NONE
 
@@ -30,9 +59,9 @@ hi @method guifg=#d75f00
 hi @method.call guifg=#ff6666
 hi @parameter guifg=#ff6666
 "
-hi @keyword guifg=#CA6868
-hi @keyword.function guifg=#CA6868
-hi @exception guifg=#CA6868
+hi @keyword guifg=#CA6868 
+hi @keyword.function guifg=#CA6868 
+hi @exception guifg=#CA6868 
 "
 hi @statement guifg=#d75f00
 hi @special guifg=#d78700
@@ -66,7 +95,7 @@ hi HopUnmatched guifg=#4e4e4e
 " ------------------------------------------
 
 " Background
-hi Normal guibg=NONE guifg=#c0c0c0 gui=NONE
+hi Normal guibg=NONE guifg=NONE gui=NONE
 
 " Comment
 hi Comment guibg=NONE guifg=#5faf5f gui=italic
@@ -129,19 +158,20 @@ hi PmenuSel guifg=NONE guibg=#4e4e4e gui=NONE
 hi PmenuThumb guifg=NONE guibg=#767676 gui=NONE
 hi Question guifg=#00afaf guibg=NONE gui=BOLD
 hi SignColumn guifg=#9e9e9e guibg=NONE gui=NONE
-"
-"
+
 hi VisualNOS guifg=NONE guibg=#303030 gui=reverse
 hi WarningMsg guifg=#d75f00 guibg=NONE gui=BOLD
 hi WildMenu guifg=#ffffd7 guibg=#303030 gui=reverse
-"
+
 hi Constant guifg=#00afaf guibg=NONE gui=NONE
 hi Error guifg=#d70000 guibg=#ffffd7 gui=BOLD,reverse
 hi Identifier guifg=#0087d7 guibg=NONE gui=NONE
 hi Ignore guifg=NONE guibg=NONE gui=NONE
+
 hi PreProc guifg=#d75f00 guibg=NONE gui=NONE
 hi Special guifg=#d75f00 guibg=NONE gui=NONE
 hi Statement guifg=#d75f00 guibg=NONE gui=NONE
+
 hi Todo guifg=#d70087 guibg=NONE gui=BOLD
 hi Type guifg=#af8700 guibg=NONE gui=NONE
 hi Underlined guifg=#5f5faf guibg=NONE gui=NONE
@@ -157,17 +187,5 @@ hi TermCursorNC guifg=#262626 guibg=#767676 gui=NONE
 hi GitGutterAdd    guifg=#87af00
 hi GitGutterChange guifg=#af8700
 hi GitGutterDelete guifg=#d70000
-
-
-
-
-
-
-
-
-
-
-
-
 
 
