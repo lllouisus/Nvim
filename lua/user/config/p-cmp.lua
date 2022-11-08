@@ -30,11 +30,13 @@ cmp.setup({
   window = {
       documentation = {
           border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+          -- border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
           winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
 
     },
       completion = {
           border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+          -- border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
           winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
       }
   },
@@ -91,17 +93,17 @@ cmp.setup({
               Operator = "",
               TypeParameter = "",
           }
-          -- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-          vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-          vim_item.menu = ({
-              buffer = "Key",
-              nvim_lsp = "Lsp",
-              nvim_lua = "Api",
-              path = "Path",
-              luasnip = "Snip",
-              npm = "Npm",
-              neorg = "Neoge",
-          })[entry.source.name]
+          vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
+          -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+          -- vim_item.menu = ({
+          --     buffer = "Key",
+          --     nvim_lsp = "Lsp",
+          --     nvim_lua = "Api",
+          --     path = "Path",
+          --     luasnip = "Snip",
+          --     npm = "Npm",
+          --     neorg = "Neoge",
+          -- })[entry.source.name]
           return vim_item
       end,
   },
