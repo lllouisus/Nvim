@@ -1,7 +1,19 @@
 require("mason").setup({
     PATH = "prepend",
 
-    ensure_installed = { "lua-language-server" }, -- not an option from mason.nvim
+    ensure_installed = {
+        "clangd",
+        "pyright",
+        "sumneko_lua",
+        "tsserver",
+        "html",
+        "cmake",
+        "cssls",
+        "tailwindcss",
+        "sqlls",
+    },
+    automatic_installation = true, -- not the same as ensure_installed
+
     ui = {
         icons = {
             package_installed = "",
