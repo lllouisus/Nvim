@@ -55,8 +55,11 @@ require("telescope").setup {
     mappings = {
       n = {
         ["q"] = actions.close,
-        ["l"] = actions.file_edit
-      }
+        ["<C-e>"] = actions.file_edit
+      },
+      i = {
+        ["<C-l>"] = false
+      },
     },
   },
   pickers = {
