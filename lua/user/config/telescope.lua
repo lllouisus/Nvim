@@ -54,11 +54,11 @@ require("telescope").setup {
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
     mappings = {
       n = {
-        ["q"] = actions.close,
-        ["<C-e>"] = actions.file_edit
+          ["q"] = actions.close,
+          ["C-e"] = actions.file_edit,
       },
       i = {
-        ["<C-l>"] = false
+          ["<C-l>"] = false,
       },
     },
   },

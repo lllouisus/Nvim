@@ -44,15 +44,23 @@ require('packer').startup({
         use { 'voldikss/vim-floaterm', config = "require('user.config.vim-floaterm').setup()", event = "CursorHold" }
 
         -- Nvim-Tree
-        require('user.config.nvim-tree').config()
-        use { 'kyazdani42/nvim-tree.lua', config = "require('user.config.nvim-tree').setup()", cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' } }
+        use {
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v2.x",
+            requires = {
+                "MunifTanjim/nui.nvim",
+            },
+            config = "require('user.config.neo-tree')",
+            cmd = { 'Neotree' }
+        }
+
 
         -- Lsp / Cmp
         use { 'williamboman/mason.nvim', config = "require('user.config.mason')" }
         use { "williamboman/mason-lspconfig.nvim", config = "require('user.config.mason-lspconfig')" }
 
         use { 'L3MON4D3/LuaSnip', event = 'CursorMoved'}
-        use { 'neovim/nvim-lspconfig', after = 'LuaSnip', config = "require('user.config.lspconfig')" }
+        use { 'neovim/nvim-lspconfig', after = { 'LuaSnip' }, config = "require('user.config.lspconfig')" }
         use { 'hrsh7th/nvim-cmp', config = "require('user.config.p-cmp')", after = "nvim-lspconfig"}
         use { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" }
         use { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" }
@@ -60,10 +68,15 @@ require('packer').startup({
         use { 'hrsh7th/cmp-path', after = "nvim-cmp" }
         use { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" }
         use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp"}, after = "nvim-cmp" }
-        -- use { 'onsails/lspkind.nvim', config = "require('user.config.p-kind')" }
         use { 'onsails/lspkind.nvim' }
         use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp-signature')" }
         use { 'glepnir/lspsaga.nvim' }
+
+        use {
+            "folke/trouble.nvim",
+            config = "require('user.config.trouble')"
+        }
+        use { 'folke/lsp-colors.nvim' }
 
         -- tree-sitter
         require('user.config.tree-sitter').config()
@@ -81,7 +94,7 @@ require('packer').startup({
         use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
         -- Lsp Progress
-        use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end, event = "InsertEnter" }
+        use { 'j-hui/fidget.nvim', config = function() require('fidget').setup() end, event = "CursorHold" }
         use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", config = function() require("todo-comments").setup { } end, event = "InsertEnter" }
         use { 'norcalli/nvim-colorizer.lua', config = "require('user.config.colorizer')", event = "CursorHold" }
 
@@ -106,7 +119,7 @@ require('packer').startup({
         }
 
         -- History
-        use { 'dinhhuy258/vim-local-history' }
+        use { 'dinhhuy258/vim-local-history', config = "require('user.config.vim-local-history')" }
 
         -- Translotor Tool
         use { 'voldikss/vim-translator', event = "CursorHold" }
@@ -125,9 +138,6 @@ require('packer').startup({
             end,
             event = "InsertEnter"
         }
-
-
-
 
 
         -----------------------------------------------------------------------------------------------------------------

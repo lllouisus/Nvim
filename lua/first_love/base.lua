@@ -45,6 +45,10 @@ G.p.cursorline = true
 G.p.termguicolors = true
 G.cmd([[colorscheme mine]])
 
+-- vim.diagnostic.config({
+--   virtual_text = false,
+-- })
+
 -- Line / Hide
 G.p.cmdheight = 1
 G.p.laststatus = 0

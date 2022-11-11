@@ -73,6 +73,9 @@ G.map({
     -- History
     { 'n', 'sc',           ':LocalHistoryToggle<CR>',     { noremap = true } },
 
+    -- Neo-tree
+    { 'n', 'tt',           ':Neotree<CR>',     { noremap = true } },
+
     -- Window Move && Resize
     { 'n', 'sv',          ':vsp<cr><c-w>w',   { noremap = true } },
     { 'n', 'ss',          ':sp<cr><c-w>w',    { noremap = true } },
