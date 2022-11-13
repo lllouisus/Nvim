@@ -77,7 +77,7 @@ G.map({
     { 'n', 'sc',           ':LocalHistoryToggle<CR>',     { noremap = true } },
 
     -- Neo-tree
-    { 'n', 'tt',           ':Neotree<CR>',     { noremap = true } },
+    { 'n', 'tt',           ':NeoTreeFloat<CR>',     { noremap = true } },
 
     -- Window Move && Resize
     { 'n', 'sn',          ':tabedit<Return>',   { silent = true } },

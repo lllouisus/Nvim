@@ -51,7 +51,7 @@ require('packer').startup({
                 "MunifTanjim/nui.nvim",
             },
             config = "require('user.config.neo-tree')",
-            cmd = { 'Neotree' }
+            cmd = { 'NeoTreeFloat' }
         }
 
         -- Lsp / Cmp

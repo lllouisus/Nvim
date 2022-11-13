@@ -80,12 +80,16 @@ require("neo-tree").setup({
             },
         },
         window = {
-            position = "float",
-            width = 30,
-            heigth = 40,
-            mapping_options = {
-                noremap = true,
-                nowait = true,
+            popup = {
+                position = { col = "100%", row = "2" },
+                size = function(state)
+                    local root_name = vim.fn.fnamemodify(state.path, ":~")
+                    local root_len = string.len(root_name) + 4
+                    return {
+                        width = math.max(root_len, 30),
+                        height = vim.o.lines - 35
+                    }
+                end
             },
             mappings = {
                 ["<space>"] = {
