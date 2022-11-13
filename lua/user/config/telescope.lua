@@ -18,8 +18,8 @@ require("telescope").setup {
       "--column",
       "--smart-case",
     },
-    prompt_prefix = "   ", --   
-    selection_caret = "  ",
+    prompt_prefix = "   ", --   
+    selection_caret = "> ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
@@ -34,8 +34,8 @@ require("telescope").setup {
       vertical = {
         mirror = false,
       },
-      width = 0.50,
-      height = 0.46,
+      width = 0.60,
+      height = 0.75,
       preview_cutoff = 120,
     },
     file_sorter = require("telescope.sorters").get_fuzzy_file,

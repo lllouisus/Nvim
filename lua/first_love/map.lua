@@ -3,7 +3,6 @@ vim.cmd([[au BufEnter * if &buftype == '' && &readonly == 1 | set buftype=acwrit
 vim.cmd('command! W w !doas tee > /dev/null %')
 
 G.map({
-
     -- Nopmap
     { 'n', 's',                                         '<NOP>',                                                        {} },
 
@@ -19,7 +18,10 @@ G.map({
     { 'n', '<c-d>',       '<BackSpace>',   {} },
     { 'i', '<c-d>',       '<BackSpace>',   {} },
 
-    -- cmap
+    { 'n', '+',       '<C-a>',   {} },
+    { 'n', '-',       '<C-x>',   {} },
+
+    -- Commant Map
     { 'c', '<c-e>',       '<Enter>',   { noremap = true } },
     { 'c', '<c-d>',       '<BackSpace>',   { noremap = true } },
     { 'c', '<C-k>',        '<c-p>',   { noremap = true } },
@@ -40,7 +42,7 @@ G.map({
     { 'v', '<c-j>',  '6j',     { noremap = true } },
     { 'v', 'H',  '^',       { noremap = true } },
     { 'v', 'L', '$',       { noremap = true } },
-    { 'n', 'va',       'ggVG',    { noremap = true } },
+    { 'n', 'va',       'gg<S-v>',    { noremap = true } },
     -- Alt + Move
     { 'n', '<A-up>',      ':m .-2<cr>',       { noremap = true, silent = true } },
     { 'n', '<A-down>',    ':m .+1<cr>',       { noremap = true, silent = true } },
@@ -59,7 +61,7 @@ G.map({
     { 'n', '<leader>fa',           ':PackerStatus<CR>',     { noremap = true } },
     { 'n', '<leader>fs',           ':StartupTime<CR>',     { noremap = true } },
 
-    -- Copy / Paste
+    -- Copy / Paste /Delete
     { 'v', 'Y',           '"+y',     { noremap = true } },
     { 'v', 'P',           '"+p',     { noremap = true } },
     { 'n', 'P',           '"+p',     { noremap = true } },
@@ -69,6 +71,7 @@ G.map({
 
     { 'n', 'x',           '"_x',     { noremap = true } },
     { 'v', 'x',           '"_x',     { noremap = true } },
+    { 'n', 'dw',           'vb"_d',     { noremap = true } },
 
     -- History
     { 'n', 'sc',           ':LocalHistoryToggle<CR>',     { noremap = true } },
@@ -77,9 +80,13 @@ G.map({
     { 'n', 'tt',           ':Neotree<CR>',     { noremap = true } },
 
     -- Window Move && Resize
-    { 'n', 'sv',          ':vsp<cr><c-w>w',   { noremap = true } },
-    { 'n', 'ss',          ':sp<cr><c-w>w',    { noremap = true } },
+    { 'n', 'sn',          ':tabedit<Return>',   { silent = true } },
+
+    { 'n', 'sv',          ':vsplit<cr><c-w>w',   { noremap = true } },
+    { 'n', 'ss',          ':split<cr><c-w>w',    { noremap = true } },
     { 'n', 'so',          ':only<cr>',        { noremap = true } },
+
+
     { 'n', '<c-left>',          ':vertical resize +2<CR>',        { noremap = true } },
     { 'n', '<c-right>',          ':vertical resize -2<CR>',        { noremap = true } },
     { 'n', 's=',          '<c-w>=',           { noremap = true } },
@@ -116,9 +123,9 @@ G.map({
     { 'v', '<c-s>',             ':s/\\v//gc<left><left><left><left>', { noremap = true } },
 
     -- FZF
-    { 'n', 'sf',           ':lua require(\'telescope.builtin\').find_files({cwd = \'~/.config\',layout_strategy=\'center\',layout_config={width=0.4, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({layout_strategy=\'center\',layout_config={width=0.4, height=0.3}})<CR>',     { noremap = true } },
-    { 'n', 'sb',           ':lua require(\'telescope.builtin\').buffers({layout_strategy=\'center\',layout_config={width=0.4, height=0.3}})<CR>',     { noremap = true } },
+    { 'n', 'sf',           ':lua require(\'telescope.builtin\').find_files({cwd = \'~/.config\',layout_strategy=\'center\',layout_config={width=0.4, height=0.6}})<CR>',     { noremap = true } },
+    { 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({layout_strategy=\'center\',layout_config={width=0.4, height=0.6}})<CR>',     { noremap = true } },
+    { 'n', 'sb',           ':Telescope buffers<CR>',     { noremap = true } },
     { 'n', 'sm',           ':lua require(\'telescope.builtin\').builtin({layout_strategy=\'center\',layout_config={width=0.4, height=0.3}})<CR>',     { noremap = true } },
     { 'n', '<leader>fh',           ':Telescope help_tags<CR>',     { noremap = true } },
     { 'n', '<leader>fw',           ':Telescope live_grep<CR>',     { noremap = true } },
