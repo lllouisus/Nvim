@@ -51,7 +51,7 @@ G.p.wrap = false -- No Wrap lines
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank {
-            higroup = 'IncSearch',
+            higroup = 'Search',
             timeout = 300
     }
 end

@@ -142,6 +142,8 @@ G.map({
     { 'n', 'se',           ':Lspsaga peek_definition<CR>',     { noremap = true } },
     { 'n', 'sk',           ':Lspsaga hover_doc<CR>',     { noremap = true } },
 
+    { 'n', 'ff',           ':Lspsaga diagnostic_jump_next<CR>',     { noremap = true } },
+    { 'n', 'FF',           ':Lspsaga diagnostic_jump_prev<CR>',     { noremap = true } },
     --- --- --- --- --- E N D --- --- --- ---
 
 

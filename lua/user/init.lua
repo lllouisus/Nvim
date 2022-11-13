@@ -144,14 +144,6 @@ require('packer').startup({
         }
 
 
-        -- Mine
-        -- use {
-        --     'svrana/neosolarized.nvim',
-        --     requires = { 'tjdevries/colorbuddy.nvim' }
-        -- }
-
-
-
         -----------------------------------------------------------------------------------------------------------------
 
     end,
