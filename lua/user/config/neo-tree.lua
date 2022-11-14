@@ -84,10 +84,10 @@ require("neo-tree").setup({
                 position = { col = "100%", row = "2" },
                 size = function(state)
                     local root_name = vim.fn.fnamemodify(state.path, ":~")
-                    local root_len = string.len(root_name) + 4
+                    local root_len = string.len(root_name) + 3
                     return {
-                        width = math.max(root_len, 30),
-                        height = vim.o.lines - 35
+                        width = math.max(root_len, 20),
+                        height = vim.o.lines - 40
                     }
                 end
             },
@@ -109,8 +109,8 @@ require("neo-tree").setup({
                 ["w"] = "open_with_window_picker",
                 --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
                 ["h"] = "close_node",
-                ["z"] = "close_all_nodes",
-                --["Z"] = "expand_all_nodes",
+                ["zc"] = "close_all_nodes",
+                ["zo"] = "expand_all_nodes",
                 ["a"] = {
                     "add",
                     -- some commands may take optional config options, see `:h neo-tree-mappings` for details

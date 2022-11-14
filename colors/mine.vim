@@ -6,35 +6,6 @@ endif
 " ------------------------------------------
 
 " Cmp colors & Lsp ------ ------ ------ ------ ------
-
-" hi CmpItemKind guifg=#719e07 guibg=NONE, gui=none
-" " hi CmpItemMenu groups=NormalNC guibg=bg, gui=NONE
-" hi CmpItemKindText guifg=#002b36 guibg=NONE gui=none
-" hi CmpItemKindMethod guifg=#719e07 guibg=NONE gui=none
-" hi CmpItemKindFunction guifg=#268bd2 guibg=NONE gui=none
-" hi CmpItemKindConstructor guifg=#cb4b16 guibg=NONE gui=none
-" hi CmpItemKindField guifg=#b58900 guibg=NONE gui=none
-" hi CmpItemKindVariable guifg=#cb4b16 guibg=NONE gui=none
-" hi CmpitemKindClass guifg=#b58900 guibg=NONE gui=none
-" hi CmpItemKindInterface guifg=#b58900 guibg=NONE gui=none
-" hi CmpItemKindModule guifg=#719e07 guibg=NONE gui=none
-" hi CmpItemKindProperty guifg=#719e07 guibg=NONE gui=none
-" hi CmpItemKindUnit guifg=#cb4b16 guibg=NONE gui=none
-" hi CmpItemKindValue guifg=#2aa198 guibg=NONE gui=none
-" hi CmpItemKindEnum guifg=#b58900 guibg=NONE gui=none
-" hi CmpItemKindKeyword guifg=#719e07 guibg=NONE gui=none
-" hi CmpItemKindSnippet guifg=#d33682 guibg=NONE gui=none
-" hi CmpItemKindColor guifg=#d33682 guibg=NONE gui=none
-" hi CmpItemKindFile guifg=#6c71c4 guibg=NONE gui=none
-" hi CmpItemKindReference guifg=#6c71c4 guibg=NONE gui=none
-" hi CmpItemKindFolder guifg=#6c71c4 guibg=NONE gui=none
-" hi CmpItemKindEnumMember guifg=#2aa198 guibg=NONE gui=none
-" hi CmpItemKindConstant guifg=#2aa198 guibg=NONE gui=none
-" hi CmpItemKindStruct guifg=#b58900 guibg=NONE gui=none
-" hi CmpItemKindEvent guifg=#cb4b16 guibg=NONE gui=none
-" hi CmpItemKindOperator guifg=#2aa198 guibg=NONE gui=none
-" hi CmpItemKindTypeParameter guifg=#cb4b16 guibg=NONE gui=none
-
 hi CmpItemKind guifg=#719e07 guibg=NONE gui=NONE
 hi CmpItemMenu guifg=NONE guibg=bg gui=NONE
 hi CmpItemKindText guifg=#719e07 guibg=NONE gui=NONE
@@ -55,7 +26,7 @@ hi CmpItemKindSnippet guifg=#d33682 guibg=NONE gui=NONE
 hi CmpItemKindColor guifg=#d33682 guibg=NONE gui=NONE
 hi CmpItemKindFile guifg=#6c71c4 guibg=NONE gui=NONE
 hi CmpItemKindReference guifg=#6c71c4 guibg=NONE gui=NONE
-hi CmpItemKindFolder guifg=#6c71c4 guibg=NONE gui=NONE
+hi CmpItemKindFolder guifg=#569CD6 guibg=NONE gui=NONE
 hi CmpItemKindEnumMember guifg=#2aa198 guibg=NONE gui=NONE
 hi CmpItemKindConstant guifg=#2aa198 guibg=NONE gui=NONE
 hi CmpItemKindStruct guifg=#b58900 guibg=NONE gui=NONE
@@ -106,6 +77,16 @@ hi LspSagaAutoPreviewBorder guifg=#2aa198
 hi LspFloatWinBorder guifg=#2aa198 
 hi LspLinesDiagBorder guifg=#2aa198 
 hi LspSagaFinderSelection guifg=#719e07 guibg=NONE gui=bold
+
+" Lspconfig Error/Warning/Info/Hint
+hi DiagnosticVirtualTextError guifg=#dc322f guibg=#410303 gui=NONE
+hi DiagnosticVirtualTextInfo guifg=#268bd2 guibg=#003366 gui=NONE
+hi DiagnosticVirtualTextWarn guifg=#b58900 guibg=#352701 gui=NONE
+hi DiagnosticVirtualTextHint guifg=#2aa198 guibg=#006666 gui=NONE
+hi DiagnosticUnderlineError guifg=none guibg=none gui=undercurl
+hi DiagnosticUnderlineWarn guifg=none guibg=none gui=undercurl
+hi DiagnosticUnderlineInfo guifg=none guibg=none gui=undercurl
+hi DiagnosticUnderlineHint guifg=none guibg=none gui=undercurl
 
 " ------------------------------------------
 
@@ -159,14 +140,12 @@ hi HopNextKey2 guifg=#ff8000
 hi HopUnmatched guifg=#4e4e4e
 
 hi TelescopeMatching guifg=#cb4b16 
-hi TelescopeBorder guifg=NONE " float border not quite dark enough, maybe that needs to change?
+hi TelescopeBorder guifg=NONE " float border not quite dark enough maybe that needs to change?
 hi TelescopePromptBorder guifg=#2aa198 "active border lighter for clarity
 hi TelescopeTitle guifg=NONE " separate them from the border a little, but not make them pop
 hi TelescopePromptPrefix guifg=NONE  " default is groups=Identifier
 hi TelescopeSelection guibg=#073642
 hi TelescopeSelectionCaret guifg=#2aa198
-
-
 
 " ------------------------------------------
 
@@ -182,9 +161,9 @@ hi Comment guibg=NONE guifg=#586e75 gui=italic
 
 " Cursor Line
 hi Cursor guifg=#002b36  guibg=#839496 gui=NONE
-hi CursorLineNr guifg=NONE guibg=NONE gui=BOLD
-hi CursorLine guifg=NONE guibg=NONE gui=BOLD
-" hi CursorLine guifg=NONE guibg=#073642 gui=BOLD
+hi CursorLineNr guifg=#b58900 guibg=NONE gui=BOLD
+" hi CursorLine guifg=NONE guibg=NONE gui=BOLD
+hi CursorLine guifg=NONE guibg=#073642 gui=BOLD
 
 " String
 hi String guibg=NONE guifg=#ff8000  guibg=NONE
@@ -228,7 +207,7 @@ hi TabLineSel guifg=#b58900 guibg=bg gui=BOLD
 
 hi VertSplit guifg=#6c6c6c guibg=NONE gui=NONE
 
-hi ColorColumn guifg=NONE guibg=#303030 gui=NONE
+hi ColorColumn guifg=NONE guibg=#b58900 gui=NONE
 hi Conceal guifg=#268bd2 guibg=NONE gui=NONE
 hi CursorColumn guifg=NONE guibg=#073642 gui=NONE
 hi Directory guifg=#268bd2 guibg=NONE gui=NONE
