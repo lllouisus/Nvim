@@ -35,29 +35,57 @@ endif
 " hi CmpItemKindOperator guifg=#2aa198 guibg=NONE gui=none
 " hi CmpItemKindTypeParameter guifg=#cb4b16 guibg=NONE gui=none
 
+hi CmpItemKind guifg=#719e07 guibg=NONE gui=NONE
+hi CmpItemMenu guifg=NONE guibg=bg gui=NONE
+hi CmpItemKindText guifg=#719e07 guibg=NONE gui=NONE
+hi CmpItemKindMethod guifg=#719e07 guibg=NONE gui=NONE
+hi CmpItemKindFunction guifg=#268bd2 guibg=NONE gui=NONE
+hi CmpItemKindConstructor guifg=#cb4b16 guibg=NONE gui=NONE
+hi CmpItemKindField guifg=#b58900 guibg=NONE gui=NONE
+hi CmpItemKindVariable guifg=#cb4b16 guibg=NONE gui=NONE
+hi CmpitemKindClass guifg=#b58900 guibg=NONE gui=NONE
+hi CmpItemKindInterface guifg=#b58900 guibg=NONE gui=NONE
+hi CmpItemKindModule guifg=#719e07 guibg=NONE gui=NONE
+hi CmpItemKindProperty guifg=#719e07 guibg=NONE gui=NONE
+hi CmpItemKindUnit guifg=#cb4b16 guibg=NONE gui=NONE
+hi CmpItemKindValue guifg=#2aa198 guibg=NONE gui=NONE
+hi CmpItemKindEnum guifg=#b58900 guibg=NONE gui=NONE
+hi CmpItemKindKeyword guifg=#719e07 guibg=NONE gui=NONE
+hi CmpItemKindSnippet guifg=#d33682 guibg=NONE gui=NONE
+hi CmpItemKindColor guifg=#d33682 guibg=NONE gui=NONE
+hi CmpItemKindFile guifg=#6c71c4 guibg=NONE gui=NONE
+hi CmpItemKindReference guifg=#6c71c4 guibg=NONE gui=NONE
+hi CmpItemKindFolder guifg=#6c71c4 guibg=NONE gui=NONE
+hi CmpItemKindEnumMember guifg=#2aa198 guibg=NONE gui=NONE
+hi CmpItemKindConstant guifg=#2aa198 guibg=NONE gui=NONE
+hi CmpItemKindStruct guifg=#b58900 guibg=NONE gui=NONE
+hi CmpItemKindEvent guifg=#cb4b16 guibg=NONE gui=NONE
+hi CmpItemKindOperator guifg=#2aa198 guibg=NONE gui=NONE
+hi CmpItemKindTypeParameter guifg=#cb4b16 guibg=NONE gui=NONE
+hi CmpItemKindClass guibg=NONE guifg=#C586C0
 
-" Bezel color
-highlight! link CmpPmenu         Pmenu
-highlight! link CmpPmenuBorder   Pmenu
-" highlight! CmpPmenu         guibg=#242a30 
-" highlight! CmpPmenuBorder   guibg=#242a30
-
-" Single color
+" " Bezel color
+" highlight! link CmpPmenu         Pmenu
+" highlight! link CmpPmenuBorder   Pmenu
+" " highlight! CmpPmenu         guibg=#242a30 
+" " highlight! CmpPmenuBorder   guibg=#242a30
+"
+" " Single color
 highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6    " Search keyword
 highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+"
+" " Function & other
+" highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+" highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+" highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+" highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+" highlight! CmpItemKindText guibg=NONE guifg=#719e07
+" highlight! CmpItemKindClass guibg=NONE guifg=#C586C0
+" highlight! CmpItemKindFile guibg=NONE guifg=#dadada
+" highlight! CmpItemKindFolder guibg=NONE guifg=#569CD6
+" highlight! CmpItemKindStruct guibg=NONE guifg=#C586C0
 
-" Function & other
-highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-highlight! CmpItemKindText guibg=NONE guifg=#CA6868
-highlight! CmpItemKindClass guibg=NONE guifg=#C586C0
-highlight! CmpItemKindFile guibg=NONE guifg=#dadada
-highlight! CmpItemKindFolder guibg=NONE guifg=#569CD6
-highlight! CmpItemKindStruct guibg=NONE guifg=#C586C0
-
-
+" Lspsaga
 hi LspSagaCodeActionTitle guifg=#719e07
 hi LspSagaBorderTitle guifg=#b58900 guibg=NONE gui=bold
 hi LspSagaDiagnosticHeader guifg=#b58900
