@@ -68,7 +68,7 @@ require('packer').startup({
         use { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" }
         use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp" }, after = "nvim-cmp" }
         use { 'onsails/lspkind.nvim' }
-        use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp_cmp.lsp-signature')" }
+        -- use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp_cmp.lsp-signature')" }
         use { 'glepnir/lspsaga.nvim' }
 
         use {

@@ -109,7 +109,7 @@ hi @keyword.function guifg=#719e07
 hi @exception guifg=#719e07
 "
 hi @statement guifg=#cb4b16
-hi @include guifg=#ff6666
+hi @include guifg=#d78700
 hi @type guifg=#d78700
 hi @type.builtin guifg=#afd787
 
