@@ -69,7 +69,7 @@ require('packer').startup({
         -- use { 'glepnir/lspsaga.nvim' }
 
 
-        use { 'L3MON4D3/LuaSnip' }
+        use { 'L3MON4D3/LuaSnip', config = "require('user.config.lsp_cmp.p-snip')" }
         use { 'neovim/nvim-lspconfig', config = "require('user.config.lsp_cmp.lspconfig')" }
         use { 'hrsh7th/nvim-cmp', config = "require('user.config.lsp_cmp.p-cmp')" }
         use { 'saadparwaiz1/cmp_luasnip' }
@@ -79,7 +79,7 @@ require('packer').startup({
         use { 'hrsh7th/cmp-cmdline' }
         use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp" } }
         use { 'onsails/lspkind.nvim' }
-        -- use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp_cmp.lsp-signature')" }
+        use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp_cmp.lsp-signature')" }
         use { 'glepnir/lspsaga.nvim', config = "require('user.config.lsp_cmp.lspsaga')" }
 
         use {
@@ -99,7 +99,8 @@ require('packer').startup({
 
         -- Telescope / FZF
         -- telescope ui select
-        -- use {'nvim-telescope/telescope-ui-select.nvim' }
+        use { 'nvim-telescope/telescope-ui-select.nvim' }
+        use { 'nvim-telescope/telescope-live-grep-args.nvim' }
         use 'nvim-lua/plenary.nvim'
         use 'nvim-lua/popup.nvim'
         use { 'nvim-telescope/telescope.nvim', requires = { 'kyazdani42/nvim-web-devicons' },
@@ -109,8 +110,7 @@ require('packer').startup({
             run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
         -- Lsp Progress
-        use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim",
-            config = function() require("todo-comments").setup {} end, event = "InsertEnter" }
+        use { "folke/todo-comments.nvim", config = function() require("todo-comments").setup {} end, event = "InsertEnter" }
         use { 'norcalli/nvim-colorizer.lua', config = "require('user.config.colorizer')", event = "CursorHold" }
 
         -- markdown
@@ -154,8 +154,11 @@ require('packer').startup({
             event = "InsertEnter"
         }
 
+        -- 
         use { 'karb94/neoscroll.nvim', config = "require('user.config.neoscroll')" }
-        -- Bufferline
+
+        -- Git History
+        -- use { 'tanvirtin/vgit.nvim', config = "require('user.config.vgit')", event = 'CursorHold' }
 
         -----------------------------------------------------------------------------------------------------------------
 

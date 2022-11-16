@@ -78,6 +78,38 @@ hi LspFloatWinBorder guifg=#2aa198
 hi LspLinesDiagBorder guifg=#2aa198 
 hi LspSagaFinderSelection guifg=#719e07 guibg=NONE gui=bold
 
+hi LspSagaWinbarObject guifg=#6c6c6c
+hi LspSagaWinbarKey guifg=#6c6c6c
+hi LspSagaWinbarSep guifg=#6c6c6c
+hi LspSagaWinbarEnum guifg=#6c6c6c
+hi LspSagaWinbarFile guifg=#6c6c6c
+hi LspSagaWinbarNull guifg=#6c6c6c
+hi LspSagaWinbarArray guifg=#6c6c6c
+hi LspSagaWinbarClass guifg=#6c6c6c
+hi LspSagaWinbarEvent guifg=#6c6c6c
+hi LspSagaWinbarField guifg=#6c6c6c
+hi LspSagaWinbarMacro guifg=#6c6c6c
+hi LspSagaWinbarMethod guifg=#6c6c6c
+hi LspSagaWinbarModule guifg=#6c6c6c
+hi LspSagaWinbarNumber guifg=#6c6c6c
+hi LspSagaWinbarString guifg=#6c6c6c
+hi LspSagaWinbarStruct guifg=#6c6c6c
+hi LspSagaWinbarBoolean guifg=#6c6c6c
+hi LspSagaWinbarPackage guifg=#6c6c6c
+hi LspSagaWinbarConstant guifg=#6c6c6c
+hi LspSagaWinbarFunction guifg=#6c6c6c
+hi LspSagaWinbarOperator guifg=#6c6c6c
+hi LspSagaWinbarProperty guifg=#6c6c6c
+hi LspSagaWinbarVariable guifg=#6c6c6c
+hi LspSagaWinbarInterface guifg=#6c6c6c
+hi LspSagaWinbarNamespace guifg=#6c6c6c
+hi LspSagaWinbarParameter guifg=#6c6c6c
+hi LspSagaWinbarTypeAlias guifg=#6c6c6c
+hi LspSagaWinbarEnumMember guifg=#6c6c6c
+hi LspSagaWinbarConstructor guifg=#6c6c6c
+hi LspSagaWinbarStaticMethod guifg=#6c6c6c
+hi LspSagaWinbarTypeParameter guifg=#6c6c6c
+
 " Lightbulb
 hi LspSagaLightBulb guifg=#FFD700
 

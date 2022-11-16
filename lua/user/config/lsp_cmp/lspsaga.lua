@@ -75,18 +75,18 @@ rename_in_select = true,
 -- and set it to your custom winbar or some winbar plugins.
 -- if in_cusomt = true you must set in_enable to false
 
--- symbol_in_winbar = {
---     in_custom = false,
---     enable = true,
---     separator = ' ',
---     show_file = true,
---     -- define how to customize filename, eg: %:., %
---     -- if not set, use default value `%:t`
---     -- more information see `vim.fn.expand` or `expand`
---     -- ## only valid after set `show_file = true`
---     file_formatter = "",
---     click_support = false,
--- },
+symbol_in_winbar = {
+    in_custom = false,
+    enable = true,
+    separator = ' ',
+    show_file = true,
+    -- define how to customize filename, eg: %:., %
+    -- if not set, use default value `%:t`
+    -- more information see `vim.fn.expand` or `expand`
+    -- ## only valid after set `show_file = true`
+    file_formatter = "",
+    click_support = false,
+},
 
 -- show outline
 show_outline = {

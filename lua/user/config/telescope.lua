@@ -5,6 +5,28 @@ end
 
 local Gmap = vim.keymap
 
+-- disable preview binaries
+local previewers = require("telescope.previewers")
+local Job = require("plenary.job")
+local new_maker = function(filepath, bufnr, opts)
+  filepath = vim.fn.expand(filepath)
+  Job:new({
+    command = "file",
+    args = { "--mime-type", "-b", filepath },
+    on_exit = function(j)
+      local mime_type = vim.split(j:result()[1], "/")[1]
+      if mime_type == "text" then
+        previewers.buffer_previewer_maker(filepath, bufnr, opts)
+      else
+        -- maybe we want to write something to the buffer here
+        vim.schedule(function()
+          vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
+        end)
+      end
+    end
+  }):sync()
+end
+
 --local actions = require('telescope.actions')
 -- Global remapping
 ------------------------------
@@ -66,8 +88,19 @@ require("telescope").setup {
   },
   pickers = {
         find_files = {
-            hidden = true
+            hidden = true,
+            theme = "dropdown",
+            previewer = false,
+            find_command = { "fd", "-H" , "-I"},  -- "-H" search hidden files, "-I" do not respect to gitignore
         }
+    },
+    ["ui-select"] = {
+        require('telescope.themes').get_dropdown {
+
+        }
+    },
+    live_grep_raw = {
+        auto_quoting = false, -- enable/disable auto-quoting
     },
   extensions = {
     fzf = {
@@ -87,11 +120,12 @@ Gmap.set( 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({
 Gmap.set( 'n', 'sb',           ':Telescope buffers<CR>',     { noremap = true } )
 Gmap.set( 'n', 'sm',           ':lua require(\'telescope.builtin\').builtin({layout_strategy=\'center\',layout_config={width=0.3, height=0.4}})<CR>',     { noremap = true } )
 Gmap.set( 'n', '<leader>fh',           ':Telescope help_tags<CR>',     { noremap = true } )
-Gmap.set( 'n', '<leader>fw',           ':Telescope live_grep<CR>',     { noremap = true } )
+Gmap.set( 'n', '<leader>fw',           ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>',     { noremap = true } )
 Gmap.set( 'n', '<leader>fo',           ':Telescope oldfiles<CR>',     { noremap = true } )
 Gmap.set( 'n', '<leader>l',           ':Telescope lsp_document_symbols<CR>',     { noremap = true } )
 Gmap.set( 'n', '<leader>/',           ':Telescope current_buffer_fuzzy_find<CR>',     { noremap = true } )
 
 
 require("telescope").load_extension("fzf")
-
+require("telescope").load_extension("ui-select")
+require("telescope").load_extension("live_grep_args")
