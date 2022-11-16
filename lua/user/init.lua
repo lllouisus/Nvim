@@ -1,12 +1,11 @@
-local G = require('first_love.G')
 local packer_bootstrap = false
-local install_path = G.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-local compiled_path = G.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
-if G.fn.empty(G.fn.glob(install_path)) > 0 then
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local compiled_path = vim.fn.stdpath('config') .. '/plugin/packer_compiled.lua'
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     print('Installing packer.nvim...')
-    G.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    G.fn.system({ 'rm', '-rf', compiled_path })
-    G.cmd [[packadd packer.nvim]]
+    vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.fn.system({ 'rm', '-rf', compiled_path })
+    vim.cmd [[packadd packer.nvim]]
     packer_bootstrap = true
 end
 
@@ -24,13 +23,11 @@ require('packer').startup({
 
         -- vv 快速选中内容插件
         require('user.config.vim-expand-region').config()
-        use { 'terryma/vim-expand-region', config = "require('user.config.vim-expand-region').setup()",
-            event = 'CursorHold' }
+        use { 'terryma/vim-expand-region', config = "require('user.config.vim-expand-region').setup()", event = 'CursorHold' }
 
-        -- ff Highlight Word
+        -- Highlight Word
         require('user.config.vim-interestingwords').config()
-        use { 'lfv89/vim-interestingwords', config = "require('user.config.vim-interestingwords').setup()",
-            event = 'CursorHold' }
+        use { 'lfv89/vim-interestingwords', config = "require('user.config.vim-interestingwords').setup()", event = 'CursorHold' }
 
         -- 多光标插件
         require('user.config.vim-visual-multi').config()
@@ -43,7 +40,7 @@ require('packer').startup({
         require('user.config.vim-floaterm').config()
         use { 'voldikss/vim-floaterm', config = "require('user.config.vim-floaterm').setup()", event = "CursorHold" }
 
-        -- Nvim-Tree
+        -- Neo-Tree
         use {
             "nvim-neo-tree/neo-tree.nvim",
             branch = "v2.x",
@@ -58,22 +55,36 @@ require('packer').startup({
         use { 'williamboman/mason.nvim', config = "require('user.config.lsp_cmp.mason')" }
         use { "williamboman/mason-lspconfig.nvim", config = "require('user.config.lsp_cmp.mason-lspconfig')" }
 
-        use { 'L3MON4D3/LuaSnip', event = 'CursorMoved' }
-        use { 'neovim/nvim-lspconfig', after = 'LuaSnip', config = "require('user.config.lsp_cmp.lspconfig')" }
-        use { 'hrsh7th/nvim-cmp', config = "require('user.config.lsp_cmp.p-cmp')", after = "nvim-lspconfig" }
-        use { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" }
-        use { 'hrsh7th/cmp-nvim-lsp', after = "nvim-cmp" }
-        use { 'hrsh7th/cmp-buffer', after = "nvim-cmp" }
-        use { 'hrsh7th/cmp-path', after = "nvim-cmp" }
-        use { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" }
-        use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp" }, after = "nvim-cmp" }
+        -- use { 'L3MON4D3/LuaSnip', event = 'CursorMoved' }
+        -- use { 'neovim/nvim-lspconfig', config = "require('user.config.lsp_cmp.lspconfig')", after = { 'cmp-nvim-lsp', 'LuaSnip' } }
+        -- use { 'hrsh7th/nvim-cmp', config = "require('user.config.lsp_cmp.p-cmp')", after = 'nvim-lspconfig' }
+        -- use { 'saadparwaiz1/cmp_luasnip', after = "nvim-cmp" }
+        -- use { 'hrsh7th/cmp-nvim-lsp' }
+        -- use { 'hrsh7th/cmp-buffer', after = "nvim-cmp" }
+        -- use { 'hrsh7th/cmp-path', after = "nvim-cmp" }
+        -- use { 'hrsh7th/cmp-cmdline', after = "nvim-cmp" }
+        -- use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp" }, after = "nvim-cmp" }
+        -- use { 'onsails/lspkind.nvim' }
+        -- use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp_cmp.lsp-signature')" }
+        -- use { 'glepnir/lspsaga.nvim' }
+
+
+        use { 'L3MON4D3/LuaSnip' }
+        use { 'neovim/nvim-lspconfig', config = "require('user.config.lsp_cmp.lspconfig')" }
+        use { 'hrsh7th/nvim-cmp', config = "require('user.config.lsp_cmp.p-cmp')" }
+        use { 'saadparwaiz1/cmp_luasnip' }
+        use { 'hrsh7th/cmp-nvim-lsp' }
+        use { 'hrsh7th/cmp-buffer' }
+        use { 'hrsh7th/cmp-path' }
+        use { 'hrsh7th/cmp-cmdline' }
+        use { 'rafamadriz/friendly-snippets', module = { "cmp", "cmp_nvim_lsp" } }
         use { 'onsails/lspkind.nvim' }
         -- use { 'ray-x/lsp_signature.nvim', config = "require('user.config.lsp_cmp.lsp-signature')" }
-        use { 'glepnir/lspsaga.nvim' }
+        use { 'glepnir/lspsaga.nvim', config = "require('user.config.lsp_cmp.lspsaga')" }
 
         use {
-            "folke/trouble.nvim",
-            config = "require('user.config.trouble')"
+           "folke/trouble.nvim",
+           config = "require('user.config.trouble')"
         }
         use { 'folke/lsp-colors.nvim' }
 
@@ -103,7 +114,7 @@ require('packer').startup({
         use { 'norcalli/nvim-colorizer.lua', config = "require('user.config.colorizer')", event = "CursorHold" }
 
         -- markdown
-        use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+        -- use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
         -- Fold Code
         use { 'anuvyklack/fold-preview.nvim',
@@ -143,6 +154,8 @@ require('packer').startup({
             event = "InsertEnter"
         }
 
+        use { 'karb94/neoscroll.nvim', config = "require('user.config.neoscroll')" }
+        -- Bufferline
 
         -----------------------------------------------------------------------------------------------------------------
 

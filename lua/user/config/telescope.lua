@@ -3,6 +3,8 @@ if (not status) then
   return
 end
 
+local Gmap = vim.keymap
+
 --local actions = require('telescope.actions')
 -- Global remapping
 ------------------------------
@@ -55,7 +57,7 @@ require("telescope").setup {
     mappings = {
       n = {
           ["q"] = actions.close,
-          ["C-e"] = actions.file_edit,
+          ["l"] = actions.file_edit,
       },
       i = {
           ["<C-l>"] = false,
@@ -77,6 +79,19 @@ require("telescope").setup {
     }
   }
 }
+
+
+    -- FZF
+Gmap.set( 'n', 'sf',           ':lua require(\'telescope.builtin\').find_files({cwd = \'~/.config\',layout_strategy=\'center\',layout_config={width=0.4, height=0.6}})<CR>',     { noremap = true } )
+Gmap.set( 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({layout_strategy=\'center\',layout_config={width=0.4, height=0.6}})<CR>',     { noremap = true } )
+Gmap.set( 'n', 'sb',           ':Telescope buffers<CR>',     { noremap = true } )
+Gmap.set( 'n', 'sm',           ':lua require(\'telescope.builtin\').builtin({layout_strategy=\'center\',layout_config={width=0.3, height=0.4}})<CR>',     { noremap = true } )
+Gmap.set( 'n', '<leader>fh',           ':Telescope help_tags<CR>',     { noremap = true } )
+Gmap.set( 'n', '<leader>fw',           ':Telescope live_grep<CR>',     { noremap = true } )
+Gmap.set( 'n', '<leader>fo',           ':Telescope oldfiles<CR>',     { noremap = true } )
+Gmap.set( 'n', '<leader>l',           ':Telescope lsp_document_symbols<CR>',     { noremap = true } )
+Gmap.set( 'n', '<leader>/',           ':Telescope current_buffer_fuzzy_find<CR>',     { noremap = true } )
+
 
 require("telescope").load_extension("fzf")
 

@@ -78,11 +78,17 @@ hi LspFloatWinBorder guifg=#2aa198
 hi LspLinesDiagBorder guifg=#2aa198 
 hi LspSagaFinderSelection guifg=#719e07 guibg=NONE gui=bold
 
+" Lightbulb
+hi LspSagaLightBulb guifg=#FFD700
+
+" Lsp Icon Error/Warning/Info/Hint
+hi DiagnosticHint guifg=#2aa198
+
 " Lspconfig Error/Warning/Info/Hint
-hi DiagnosticVirtualTextError guifg=#dc322f guibg=#410303 gui=NONE
+hi DiagnosticVirtualTextError guifg=#dc322f guibg=#330D05 gui=NONE
 hi DiagnosticVirtualTextInfo guifg=#268bd2 guibg=#003366 gui=NONE
-hi DiagnosticVirtualTextWarn guifg=#b58900 guibg=#352701 gui=NONE
-hi DiagnosticVirtualTextHint guifg=#2aa198 guibg=#006666 gui=NONE
+hi DiagnosticVirtualTextWarn guifg=#b58900 guibg=#221704 gui=NONE
+hi DiagnosticVirtualTextHint guifg=#2aa198 guibg=#0A3530 gui=NONE
 hi DiagnosticUnderlineError guifg=none guibg=none gui=undercurl
 hi DiagnosticUnderlineWarn guifg=none guibg=none gui=undercurl
 hi DiagnosticUnderlineInfo guifg=none guibg=none gui=undercurl
@@ -161,9 +167,9 @@ hi Comment guibg=NONE guifg=#586e75 gui=italic
 
 " Cursor Line
 hi Cursor guifg=#002b36  guibg=#839496 gui=NONE
-hi CursorLineNr guifg=#b58900 guibg=NONE gui=BOLD
+hi CursorLineNr guifg=#b58900 guibg=#000000 gui=BOLD
 " hi CursorLine guifg=NONE guibg=NONE gui=BOLD
-hi CursorLine guifg=NONE guibg=#073642 gui=BOLD
+hi CursorLine guifg=NONE guibg=#002b36 gui=BOLD
 
 " String
 hi String guibg=NONE guifg=#ff8000  guibg=NONE

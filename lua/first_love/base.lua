@@ -1,5 +1,4 @@
 local G = require"first_love.G"
-
 vim.cmd("autocmd!")
 
 -- Leader
@@ -14,12 +13,12 @@ G.p.fileencoding = 'utf-8'
 G.w.number = true
 G.p.cursorline = true
 G.p.termguicolors = true
--- G.p.winblend = 0
--- G.p.wildoptions = 'pum'
--- G.p.pumblend = 5
--- G.p.background = 'dark'
+G.p.winblend = 0
+G.p.wildoptions = 'pum'
+G.p.pumblend = 5
+G.p.background = 'dark'
 G.w.signcolumn = 'yes'
-G.cmd([[colorscheme mine]])
+vim.cmd([[colorscheme mine]])
 
 -- Search 
 G.p.hlsearch = true
@@ -41,6 +40,9 @@ G.p.softtabstop = 4
 G.p.shiftwidth = 4
 G.p.smarttab = true
 G.p.expandtab = true
+
+G.p.ai = true -- Auto indent
+G.p.si = true -- Smart indent
 
 -- Not Backup
 G.p.backup = false
@@ -74,13 +76,6 @@ G.cmd([[
         set undodir=~/.config/nvim/cache/undodir
 ]])
 
--- Code Fold
-G.cmd([[
-    set foldenable
-    set foldmethod=manual
-    set viewdir=~/.config/nvim/cache/viewdir
-]])
-
 -- Save History
 G.p.viminfo = '!,\'10000,<50,s10,h'
 
@@ -88,7 +83,7 @@ G.p.title = true
 G.p.showcmd = true
 G.p.cmdheight = 1
 G.p.laststatus = 0
-G.p.scrolloff = 10
+G.p.scrolloff = 6
 G.p.shell = 'zsh'
 G.p.backupskip = { '/tmp/*', '/private/tmp/*' }
 G.p.breakindent = true
@@ -109,9 +104,3 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 -- Add asterisks in block comments
 G.p.formatoptions:append { 'r' }
 
--- 提示多余空格和TODO
-G.cmd([[
-    hi ErrSpace ctermbg=238
-    " autocmd BufWinEnter * syn match ErrSpace /\s\+$\| \+\ze\t\+\|\t\+\zs \+/
-    autocmd BufWinEnter * syn match Todo /TODO\(:.*\)*/
-]])

@@ -1,11 +1,9 @@
-local G = require('first_love.G')
+local Gmap = vim.keymap
 local M = {}
 
 function M.config()
-    G.map({
-        { 'v', 'v', '<Plug>(expand_region_expand)', {silent = true}},
-        { 'v', 'V', '<Plug>(expand_region_shrink)', {silent = true}},
-    })
+        Gmap.set( 'v', 'v', '<Plug>(expand_region_expand)', {silent = true} )
+        Gmap.set( 'v', 'V', '<Plug>(expand_region_shrink)', {silent = true} )
 end
 
 function M.setup()
