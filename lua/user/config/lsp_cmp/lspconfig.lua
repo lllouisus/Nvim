@@ -102,7 +102,6 @@ nvim_lsp.pyright.setup {
 -- )
 
 -- Diagnostic symbols in the sign column (gutter)    ﯦ
--- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 local signs = { Error = " ", Warn = " ", Hint = "", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
