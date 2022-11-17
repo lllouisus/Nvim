@@ -171,12 +171,11 @@ hi GitSignsChangeNr guifg=#b58900 guibg=NONE
 hi GitSignsDeleteLn guifg=#dc322f guibg=NONE
 hi GitSignsDeleteNr guifg=#dc322f guibg=NONE
 
-" Hop highlight setting
-hi HopNextKey guifg=#ff8000
-hi HopNextKey1 guifg=#ff8000
-hi HopNextKey2 guifg=#ff8000
-hi HopUnmatched guifg=#4e4e4e
+" Leap
+hi LeapMatch guifg=#FFD700
+" hi LeapLabelPrimary guifg=#000000 guibg=#719e07
 
+" Telescope
 hi TelescopeMatching guifg=#cb4b16 
 hi TelescopeBorder guifg=NONE " float border not quite dark enough maybe that needs to change?
 hi TelescopePromptBorder guifg=#2aa198 "active border lighter for clarity

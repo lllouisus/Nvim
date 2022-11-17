@@ -133,17 +133,14 @@ require('packer').startup({
            cmd = "Registers"
         }
 
-        -- History
-        -- use { 'dinhhuy258/vim-local-history' }
-
         -- Translotor Tool
         use { 'voldikss/vim-translator', event = "CursorHold" }
 
         -- Autopairs
         use { 'windwp/nvim-autopairs', config = "require('user.config.autopairs')", event = "InsertEnter" }
 
-        -- Hop
-        use { 'phaazon/hop.nvim', branch = 'v2', config = "require('user.config.hop')", event = 'CursorHold' }
+        -- Cursor move
+        use { 'ggandor/leap.nvim', config = "require('user.config.leap')"}
 
         -- Gitsigns
         use {
@@ -155,9 +152,10 @@ require('packer').startup({
         }
 
         -- 
-        use { 'karb94/neoscroll.nvim', config = "require('user.config.neoscroll')" }
+        use { 'karb94/neoscroll.nvim', config = "require('user.config.neoscroll')", event = 'CursorHold' }
 
-        -- Git History
+        -- History/Git History
+        -- use { 'dinhhuy258/vim-local-history' }
         -- use { 'tanvirtin/vgit.nvim', config = "require('user.config.vgit')", event = 'CursorHold' }
 
         -----------------------------------------------------------------------------------------------------------------

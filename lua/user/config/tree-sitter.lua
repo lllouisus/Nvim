@@ -2,7 +2,7 @@ local G = require('first_love.G')
 local M = {}
 
 function M.config()
-    G.map({ { 'n', 'sh', ':TSHighlightCapturesUnderCursor<CR>', {silent = true, noremap = true}} })
+    -- G.map({ { 'n', 'sh', ':TSHighlightCapturesUnderCursor<CR>', {silent = true, noremap = true}} })
 end
 
 function M.setup()

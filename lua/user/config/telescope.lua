@@ -119,9 +119,9 @@ Gmap.set( 'n', 'sf',           ':lua require(\'telescope.builtin\').find_files({
 Gmap.set( 'n', 'sl',           ':lua require(\'telescope.builtin\').find_files({layout_strategy=\'center\',layout_config={width=0.4, height=0.6}})<CR>',     { noremap = true } )
 Gmap.set( 'n', 'sb',           ':Telescope buffers<CR>',     { noremap = true } )
 Gmap.set( 'n', 'sm',           ':lua require(\'telescope.builtin\').builtin({layout_strategy=\'center\',layout_config={width=0.3, height=0.4}})<CR>',     { noremap = true } )
-Gmap.set( 'n', '<leader>fh',           ':Telescope help_tags<CR>',     { noremap = true } )
-Gmap.set( 'n', '<leader>fw',           ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>',     { noremap = true } )
-Gmap.set( 'n', '<leader>fo',           ':Telescope oldfiles<CR>',     { noremap = true } )
+Gmap.set( 'n', 'sh',           ':Telescope help_tags<CR>',     { noremap = true } )
+Gmap.set( 'n', 'sw',           ':lua require(\'telescope\').extensions.live_grep_args.live_grep_args()<CR>',     { noremap = true } )
+Gmap.set( 'n', 'so',           ':Telescope oldfiles<CR>',     { noremap = true } )
 Gmap.set( 'n', '<leader>l',           ':Telescope lsp_document_symbols<CR>',     { noremap = true } )
 Gmap.set( 'n', '<leader>/',           ':Telescope current_buffer_fuzzy_find<CR>',     { noremap = true } )
 

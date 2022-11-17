@@ -79,7 +79,7 @@ G.map({
     -- Window Move & Resize
     { 'n', 'sv', ':vsplit<CR><C-w>w', { noremap = true } },
     { 'n', 'ss', ':split<CR><C-w>w', { noremap = true } },
-    { 'n', 'so', ':only<CR>', { noremap = true } },
+    { 'n', 'to', ':only<CR>', { noremap = true } },
 
     { 'n', '<C-Left>', ':vertical resize +2<CR>', { noremap = true } },
     { 'n', '<C-Right>', ':vertical resize -2<CR>', { noremap = true } },
